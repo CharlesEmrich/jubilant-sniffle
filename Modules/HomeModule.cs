@@ -9,10 +9,12 @@ namespace CoinCombo
     public HomeModule()
     {
       Get["/"] = _ => {
-        return View["index.cshtml"];
+        Dictionary<string, int> blankDict = new Dictionary<string, int> {{"quarters", 0}, {"dimes", 0}, {"nickels", 0}, {"pennies", 0}};
+        return View["index.cshtml", blankDict];
       };
       Post["/"] = _ => {
-        return View["index.cshtml"];
+        Dictionary<string, int> ourDict = Change.GetChange(Request.Form["coins"]);
+        return View["index.cshtml", ourDict];
       };
     }
   }

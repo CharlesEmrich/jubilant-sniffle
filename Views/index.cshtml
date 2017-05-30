@@ -1,3 +1,33 @@
-<p>
-  Hello World.
-</p>
+<h1>Coin Change Calculator</h1>
+<form action="/" method="post">
+  <label for="coins">Cents</label>
+  <input id="coins" name="coins" type="number">
+  <button type="submit">Gimme some change</button>
+</form>
+
+  <ul>
+    @if(@Model["quarters"] == 1)
+    {
+      <li>Quarter: @Model["quarters"] </li>
+    } else if(@Model["quarters"] > 1){
+      <li>Quarters: @Model["quarters"] </li>
+    }
+    @if(@Model["dimes"] == 1)
+    {
+      <li>Dime: @Model["dimes"] </li>
+    } else if(@Model["dimes"] > 1){
+      <li>Dimes: @Model["dimes"] </li>
+    }
+    @if(@Model["nickels"] == 1)
+    {
+      <li>Nickel: @Model["nickels"] </li>
+    } else if(@Model["nickels"] > 1){
+      <li>Nickels: @Model["nickels"] </li>
+    }
+    @if(@Model["pennies"] == 1)
+    {
+      <li>Penny: @Model["pennies"] </li>
+    } else if(@Model["pennies"] > 1){
+      <li>Pennies: @Model["pennies"] </li>
+    }
+  </ul>
