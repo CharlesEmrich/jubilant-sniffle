@@ -8,12 +8,12 @@ namespace CoinCombo
   public class CoinComboTest
   {
     [Fact]
-    public void GetChange_ReturnsAnInteger_true()
+    public void GetChange_ReturnsNumberOfQuarters_true()
     {
-      int input = 12;
-      int expectedOutput = 12;
-      int output = Change.GetChange(input);
-      Assert.Equal(true, expectedOutput == output);
+      int input = 50;
+      int expectedOutput = 2;
+      Dictionary<string, int> output = Change.GetChange(input);
+      Assert.Equal(true, expectedOutput == output["quarters"]);
     }
   }
 }
