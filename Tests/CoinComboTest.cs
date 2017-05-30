@@ -24,5 +24,23 @@ namespace CoinCombo
       Dictionary<string, int> output = Change.GetChange(input);
       Assert.Equal(true, expectedOutput == output["dimes"]);
     }
+
+    [Fact]
+    public void GetChange_ReturnsNumberOfNickels_true()
+    {
+      int input = 65;
+      int expectedOutput = 1;
+      Dictionary<string, int> output = Change.GetChange(input);
+      Assert.Equal(true, expectedOutput == output["nickels"]);
+    }
+
+    [Fact]
+    public void GetChange_ReturnsNumberOfPennies_true()
+    {
+      int input = 74;
+      int expectedOutput = 4;
+      Dictionary<string, int> output = Change.GetChange(input);
+      Assert.Equal(true, expectedOutput == output["pennies"]);
+    }
   }
 }
