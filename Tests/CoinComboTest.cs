@@ -13,7 +13,7 @@ namespace CoinCombo
       int input = 50;
       int expectedOutput = 2;
       Dictionary<string, int> output = Change.GetChange(input);
-      Assert.Equal(true, expectedOutput == output["quarters"]);
+      Assert.Equal(expectedOutput, output["quarters"]);
     }
 
     [Fact]
@@ -22,7 +22,7 @@ namespace CoinCombo
       int input = 60;
       int expectedOutput = 1;
       Dictionary<string, int> output = Change.GetChange(input);
-      Assert.Equal(true, expectedOutput == output["dimes"]);
+      Assert.Equal(expectedOutput, output["dimes"]);
     }
 
     [Fact]
@@ -31,7 +31,7 @@ namespace CoinCombo
       int input = 65;
       int expectedOutput = 1;
       Dictionary<string, int> output = Change.GetChange(input);
-      Assert.Equal(true, expectedOutput == output["nickels"]);
+      Assert.Equal(expectedOutput, output["nickels"]);
     }
 
     [Fact]
@@ -40,7 +40,7 @@ namespace CoinCombo
       int input = 74;
       int expectedOutput = 4;
       Dictionary<string, int> output = Change.GetChange(input);
-      Assert.Equal(true, expectedOutput == output["pennies"]);
+      Assert.Equal(expectedOutput, output["pennies"]);
     }
   }
 }
